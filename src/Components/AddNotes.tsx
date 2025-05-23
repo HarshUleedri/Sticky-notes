@@ -24,21 +24,21 @@ const AddNotes = () => {
   };
 
   return (
-    <div>
+    <div className="flex gap-4 items-start justify-center">
       <textarea
-        className="border rounded"
+        value={note}
+        placeholder="Add notes"
+        className="border rounded border-gray-200 w-96 outline-none px-4 py-2"
         onChange={handleOnChange}
         id="notes"
       ></textarea>
 
       <button
         onClick={handleOnAdd}
-        className="px-4 py-1 rounded cursor-pointer font-semibold bg-gray-200"
+        className="px-4 py-1 rounded cursor-pointer font-semibold bg-gray-200 "
       >
         Create notes
       </button>
-
-      {note}
     </div>
   );
 };

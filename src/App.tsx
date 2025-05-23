@@ -1,11 +1,19 @@
 import AddNotes from "./Components/AddNotes";
 import Notes from "./Components/Notes";
+import useNotes from "./Context/NotesContext/useNotes";
 
 const App = () => {
+  const { notes } = useNotes();
+
   return (
-    <div>
+    <div className="py-20">
       <AddNotes />
-      <Notes />
+
+      <div>
+        {notes.map((note) => (
+          <Notes note={note} />
+        ))}
+      </div>
     </div>
   );
 };
